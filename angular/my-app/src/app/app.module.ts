@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { DniComponent } from './components/dni/dni.component';
 import { ImcComponent } from './components/imc/imc.component';
 import { LayoutModule } from './layout/layout.module';
+import { JuegopptComponent } from './components/juegoppt/juegoppt.component';
 
 //ng g c components/dni
 @NgModule({
   declarations: [
     AppComponent,
     DniComponent,
-    ImcComponent
+    ImcComponent,
+    JuegopptComponent
   ],
   imports: [
     BrowserModule,
