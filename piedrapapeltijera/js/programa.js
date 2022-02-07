@@ -20,13 +20,13 @@ let tabla_decision = [
 ];
 
 
-function selectPlay(play) {
+selectPlay(play) {
     localStorage.setItem("selected", play);
 
     decorateSelectedPlay(play);
 }
 
-function decorateSelectedPlay(play) {
+decorateSelectedPlay(play) {
 
     let piedra = document.getElementById("piedra");
     let papel = document.getElementById("papel");
@@ -42,7 +42,7 @@ function decorateSelectedPlay(play) {
 
 }
 
-function getComputerPlay() {
+getComputerPlay() {
     return Math.floor(Math.random() * 3);
 }
 

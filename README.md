@@ -26,3 +26,13 @@ exports: [
 # donde vamos dando forma a nuestro menu superior borrando lo que no necesitamos y quedandonos únicamente
 # con dni e Imc
 
+### CREO NUEVO COMPONENTE JUEGO PPT ASOCIADO AL MODULO PRINCIPAL 
+EN MENU-SUPERIOR
+
+</li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/ppt">Piedra Papel o Tijera</a><!--se corresponde con app routing module pongo entre comillas imc-->
+
+          </li>
+ASOCIO A AAP.ROUTING...
+

@@ -20,7 +20,7 @@
 <img *ngIf="calculado" src={{oimc.foto}}>
 <div *ngIf="array_imc && array_imc.length>0">
     
-    <table>
+    <!-- <table>
         <thead>
             <th>PESO</th>
             <th>ALTURA</th>
@@ -37,6 +37,40 @@
                 <td><img src={{itemimc.foto}}></td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">PESO</th>
+            <th scope="col">ALTURA</th>
+            <th scope="col">IMC NUM</th>
+            <th scope="col">LECTURA</th>
+            <th scope="col">IMAGEN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let itemimc of array_imc">
+            <th scope="row">1</th>
+            <td>{{itemimc.peso}}</td>
+            <td>{{itemimc.altura}}</td>
+            <td>{{itemimc.numerico}}</td>
+            <td>{{itemimc.lectura}}</td>
+            <td><img src={{itemimc.foto}}></td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
     <button (click)="ordendarPorImc()">ORDENAR</button>
 </div>
