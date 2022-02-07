@@ -1,0 +1,10 @@
+img {
+    width: 250px;
+    height: 250px;
+    /*quitar el borde*/
+}
+
+td img {
+    max-width: 2rem;
+    height: auto;
+}

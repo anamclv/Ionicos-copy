@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <title>
+        ADIVINA adivinanza
+    </title>
+    <!--
+ *
+ *El código de esta script, es un poco misterioso. Algún programador Clase "C", no ha usado
+ *nombres descriptivos y ahora, nos toca pegarnos y descubrir qué narices hace este código,
+ *para poder usarlo en nuestro proyecto.
+ *
+ *
+ *Se pide:
+ *
+ *1) Adivinar la funcionalidad del método adivinaQueHace
+ *2) Una vez descubierto, aplicar un nombre apropiado al método
+ *3) Idear un método equivalente, pero distinto. Es decir, crear un método
+ *que haga lo mismo que adivinaQueHace, pero de otra manera.
+ *4) EXTRA: Sólo si resolviste los puntos anteriores, implementa una versión recursiva
+-->
+    <script language="javascript">
+
+
+
+
+
+        function esPalindromo() {
+            var espalindromo = true;
+            var cad = document.getElementById("palabra").value;
+            var i = 0;
+            var j = cad.length - 1;
+
+            while ((i < j) && (espalindromo)) {
+                if (cad.charAt(i) == cad.charAt(j)) {
+                    espalindromo = true;
+                } else {
+                    espalindromo = false;
+                }
+                i++;
+                j--;
+            }
+
+            console.log("bd = " + espalindromo);
+            return espalindromo;
+        }
+        function invertir(cadena) {
+            var x = cadena.length-1;
+            var cadenaInvertida = "";
+
+            while (x >= 0) {
+                cadenaInvertida = cadenaInvertida + cadena.charAt(x);
+                x--;
+            }
+            return cadenaInvertida;
+        }
+
+        function esPalindromo2() {
+            var espalindromo = true;
+            var cad = document.getElementById("palabra").value;
+
+
+            //DAMOS LA VUELTA A CAD
+                var cad1 = invertir(cad);
+                console.log(`cadena al revés ${cad1}`);
+                /* if (cad==cad1)
+                {
+                    esPalindromo = true;
+                } else {
+                    esPalindromo = false;
+                } */
+                esPalindromo = (cad==cad1);
+            //CAD1
+            //SI CAD! == CAD
+            //VERDADERO
+
+            return espalindromo;
+        }
+
+        //SOLUCIÓN RECURSIVA
+        let procesar = (palabra, i, j) => i < j ? palabra[i] == palabra[j] ? procesar(palabra, i + 1, j - 1) : false : true;
+
+        function palabraSimetricaRec() {
+            var palabra = document.getElementById("palabra").value;
+
+            let r = procesar(palabra, 0, palabra.length - 1);
+
+            console.log(`Palindromo = ${r}`);
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <label for="palabra">PALABRA</label>
+    <input type="text" id="palabra">
+   <!--  <button onclick="esPalindromo();">Empieza</button> -->
+    <button onclick="esPalindromo2();">Empieza</button>
+    <p id="p1"></p>
+</body>
+
+</html>

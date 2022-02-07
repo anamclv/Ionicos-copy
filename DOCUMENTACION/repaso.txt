@@ -1,0 +1,26 @@
+IDE .- Integrated Development Enviroment (VS Code)
+document .- "DOM" variable predefinida que representa el HTML
+que estamos viendo en el navegador
+css . Hoja de estilo
+html - Estructuram eitquetas ELEMENTOS
+js. Funcionalidad pagina /manipular DOM
+FASE ESTÁTICA  
+    1Diseño de la apariencia
+    2Programo con HTML/CSS la maqueta
+FASE DINÁMICA
+    1Diagrama de Actividad/Psueudocódigo
+    2Programo en js
+CALLBACK. Llamada por detrás
+LISTENER. Programamos el evento
+CLASE. Concepto "importante" en mi app
+    Representan algo
+    Hacen algo
+Objeto. Instancia/ejemplo de una clase (variable de una clase)
+this. PAALBRA reservada que dependiendo del contexto, significa una cosa:
+    global - window
+    constructor - el objeto nuevo que se está creando
+    métodos de la clase - el objeto con el que llamo
+
+new .-  Palabra reservada que acompaña al nombre de la clase que queremos instanciar
+
+onload .- evento de la ventana que cuando se cargue, le podemos programar una tarea
