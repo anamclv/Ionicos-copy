@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { DniComponent } from './components/dni/dni.component';
 import { ImcComponent } from './components/imc/imc.component';
 import { LayoutModule } from './layout/layout.module';
-import { JuegopptComponent } from './components/juegoppt/juegoppt.component';
+import { JuegoPptComponent} from './components/juegoppt/juegoppt.component';
 import { MarcadorComponent } from './components/marcador/marcador.component';
+import { AlumnoComponent } from './components/alumno/alumno.component';
+import { HttpClientModule } from '@angular/common/http';
 
 //ng g c components/dni
 @NgModule({
@@ -16,14 +18,17 @@ import { MarcadorComponent } from './components/marcador/marcador.component';
     AppComponent,
     DniComponent,
     ImcComponent,
-    JuegopptComponent,
-    MarcadorComponent
+    JuegoPptComponent,
+    MarcadorComponent,
+    AlumnoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    LayoutModule// bombilla e importar de layout.module.ts
+    LayoutModule,// bombilla e importar de layout.module.ts
+    HttpClientModule// para Api Rest
+
   ],
   providers: [],
   bootstrap: [AppComponent]
