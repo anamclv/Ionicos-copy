@@ -36,3 +36,19 @@ EN MENU-SUPERIOR
           </li>
 ASOCIO A AAP.ROUTING...
 
+## creamos una clase
+
+`````
+ng g class <name>
+````
+no la usamos queda TODO:
+
+## VAMOS A CREAR UN COMPONENTE PARA REUTILIZARLO EN CUALQUIER PAGINA
+
+ng g c marcador // en el modulo principal
+
+quiero que tenga la tabla y el boton de ponerla a cero
+
+quito la parte de la tabla y el boton de 
+
+<app-marcador></app-marcador>esto lo pongo en el juegoppt para luego introducir el marcador
