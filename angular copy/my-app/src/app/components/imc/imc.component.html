@@ -1,0 +1,42 @@
+
+<h1>{{titulo}}</h1>
+
+<p>Última conexión {{ultima_vez | date:'medium'}}</p>
+<!-- <h1>{{ultima_vez_date | date: 'mediumDate'}}</h1>
+<h1>{{ultima_vez_date | date: 'fullDate'}}</h1>
+<h1>{{ultima_vez_date | date: 'long'}}</h1> -->
+<!-- <h1>{{ ultima_vez_date | shortDate}}</h1>-->
+<!-- <label for="user_name">{{label_nombre}}</label>
+<input type="text" [(ngModel)]="nombre" id="user_name" name="user_name" required>
+ -->
+<label for="weight">{{label_peso}}</label>
+<input type="text" [(ngModel)]="oimc.peso" id="weight" name="weight" required>
+
+<label for="height">{{label_altura}}</label>
+<input type="text" [(ngModel)]="oimc.altura" id="height" name="height" required>
+
+<button type="submit" (click)="calculateIMC()">CALCULAR</button>
+<p *ngIf="calculado">Su IMC es {{oimc.numerico}}</p>
+<img *ngIf="calculado" src={{oimc.foto}}>
+<div *ngIf="array_imc && array_imc.length>0">
+    
+    <table>
+        <thead>
+            <th>PESO</th>
+            <th>ALTURA</th>
+            <th>IMC NUM</th>
+            <th>LECTURA</th>
+            <th>IMAGEN</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let itemimc of array_imc">
+                <td>{{itemimc.peso}}</td>
+                <td>{{itemimc.altura}}</td>
+                <td>{{itemimc.numerico}}</td>
+                <td>{{itemimc.lectura}}</td>
+                <td><img src={{itemimc.foto}}></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="ordendarPorImc()">ORDENAR</button>
+</div>

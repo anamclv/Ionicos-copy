@@ -1,0 +1,24 @@
+<div>
+    <h1>Juega y Gana!!!</h1>
+</div>
+<div id="botonera" class="botones">
+    <div id="piedra" class="boton" (click)="selectPlay(0)">
+        <img src="{{FOTO_PIEDRA}}" alt="Piedra">
+    </div>
+    <div id="papel" class="boton" (click)="selectPlay(1)">
+        <img src="{{FOTO_PAPEL}}" alt="Piedra">
+    </div>
+    <div id="tijera" class="boton" (click)="selectPlay(2)">
+        <img src="{{FOTO_TIJERA}}" alt="Piedra">
+    </div>
+</div>
+<div class="contenedor">
+    <button class="button-play" (click)="playNow()" [hidden]="!seleccionado">Jugar</button>
+</div>
+<div id="botonera-p" class="botones-p">
+    <div class="boton-p">
+        <img id="computerPlay">
+
+    </div>
+</div>
+<app-marcador></app-marcador>

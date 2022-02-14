@@ -1,14 +1,12 @@
-###bootstrap
+## bootstrap
 ## configuramos
 # instalamos bootstrap, jquery y popper
 `````
 npm i bootstrap jquery popper.js
 `````
-
-
 https://getbootstrap.com/docs/5.1/components/accordion/
 
-# incluimos un menú de navegación en nuestra paágina
+## incluimos un menú de navegación en nuestra página
 
 https://getbootstrap.com/docs/5.1/components/navbar/
 
@@ -32,8 +30,7 @@ EN MENU-SUPERIOR
 </li>
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="/ppt">Piedra Papel o Tijera</a><!--se corresponde con app routing module pongo entre comillas imc-->
-
-          </li>
+</li>
 ASOCIO A AAP.ROUTING...
 
 ## creamos una clase
@@ -52,3 +49,15 @@ quiero que tenga la tabla y el boton de ponerla a cero
 quito la parte de la tabla y el boton de 
 
 <app-marcador></app-marcador>esto lo pongo en el juegoppt para luego introducir el marcador
+
+## EJERCICIO API REST
+1) creado el Componente ALumnos
+2) Hemos registrado su ruta
+3) Lo hemos puesto en el menú superior
+4) Importamos el módulo HTTP en el
+módulo principal
+
+creo un servicio
+# 1.creo una carpeta services 
+# 2. ````ng g s services/alumno
+
