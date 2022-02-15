@@ -2,6 +2,10 @@ import { HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Alumno } from 'src/app/models/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
+//import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import {  faTrashAlt } from '@fortawesome/free-regular-svg-icons';
+import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alumno',
@@ -9,6 +13,9 @@ import { AlumnoService } from 'src/app/services/alumno.service';
   styleUrls: ['./alumno.component.css']
 })
 export class AlumnoComponent implements OnInit {
+  //basurita=faTrash;
+  basurita2=faTrashAlt;
+  icedicion=faUserEdit;
 //esta clase usa el AlumnoService
 //para obtener datos
 
@@ -18,7 +25,8 @@ export class AlumnoComponent implements OnInit {
   automatico:boolean;
   refresh_interval:any;
 
-  constructor(public servicio_alumnos:AlumnoService) { 
+  constructor(public servicio_alumnos:AlumnoService,
+    private router:Router) { 
     this.lista_alumnos= new Array<Alumno>();
     this.automatico=false;
   }
@@ -60,6 +68,7 @@ export class AlumnoComponent implements OnInit {
 
   mostrarError (error:any):void
   {
+    
     console.error('Ha ocurrido un error: (' + error.status + ') - ' + error.message);
   }
 
@@ -74,24 +83,36 @@ export class AlumnoComponent implements OnInit {
 
   deleteUsuario(alumno:Alumno){
     console.log("borrar usuario " + alumno.id);
-    //TODO: borrar al ALUMNO del servidor
-    this.servicio_alumnos.borrarAlumno(alumno.id).subscribe(
-      //"observador"--el objeto que reciba la llamada 
-      //cuando la respuesta esté lista
-      {
-        complete: () => {console.log("ha terminado");},
-        error: (error_r) => {this.mostrarError(error_r);},
-        //error: (error_r) => {console.error('FALLLO ' +error_r);},
-        next: () =>
+    //TODO: vamos a preguntar al usuario
+    if (confirm ("¿De verdad quieres borrar?"))
+    {
+      this.servicio_alumnos.borrarAlumno(alumno.id).subscribe(
+        //"observador"--el objeto que reciba la llamada 
+        //cuando la respuesta esté lista
         {
-          //1 recargar la página
-          //2 eliminar del array local el usuario borrado
-          this.lista_alumnos = this.lista_alumnos.filter(al=> al.id!=alumno.id);
-          console.log("alumno borrado");
+          complete: () => {console.log("ha terminado");},
+          error: (error_r) => {
+            this.mostrarError(error_r);
+            //si el alumno ya está borrado, el servidor
+            //nos da un error y se mete por aquí
+            //actualizamos la lista eliminando ese alumno
+            this.lista_alumnos =this.lista_alumnos.filter(al=> al.id!=alumno.id);
+          },
+          //error: (error_r) => {console.error('FALLLO ' +error_r);},
+          next: () =>
+          {
+            //1 recargar la página
+            //2 eliminar del array local el usuario borrado
+            this.lista_alumnos = this.lista_alumnos.filter(al=> al.id!=alumno.id);
+            console.log("alumno borrado");
+          }
         }
+      );
+  
+    } else {
+        console.log("el usuario cancela la acción de borrar");
+    }
       }
-    );
-  }
 
   ngOnInit(): void {
     this.getAlumnos();
@@ -112,4 +133,9 @@ export class AlumnoComponent implements OnInit {
     );*/
   }
 
+  updateUsuario(alumno:Alumno)
+  {
+    console.log("quiere editar al alumno " +alumno.id);
+    this.router.navigate(['/alumno/form', alumno.id]);
+  }
 }

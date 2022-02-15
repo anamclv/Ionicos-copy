@@ -7,7 +7,7 @@ export class Alumno {
     nombre: string;
     apellido: string;
     email: string;
-    edad: number;
+    edad?: number;
     creadoEn: string;
     fotoHashCode?: number;
 
@@ -16,7 +16,7 @@ export class Alumno {
         this.id=0;
         this.nombre='';
         this.apellido='';
-        this.edad=0;
+        //this.edad=0;
         this.email='';
         this.creadoEn='';
 

@@ -11,6 +11,7 @@ import { JuegoPptComponent } from './components/juego-ppt/juego-ppt.component';
 import { MarcadorComponent } from './components/marcador/marcador.component';
 import { AlumnoComponent } from './components/alumno/alumno.component';
 import { FormularioAlumnoComponent } from './components/formulario-alumno/formulario-alumno.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 //ng g c components/dni
 @NgModule({
@@ -28,7 +29,8 @@ import { FormularioAlumnoComponent } from './components/formulario-alumno/formul
     AppRoutingModule,
     FormsModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

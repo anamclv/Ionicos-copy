@@ -14,7 +14,8 @@ const routes: Routes = [
   {path:"imc", component: ImcComponent},
   {path:"ppt", component: JuegoPptComponent},
   {path:"alumno", component: AlumnoComponent},
-  {path:"alumno/form", component: FormularioAlumnoComponent}
+  {path:"alumno/form", component: FormularioAlumnoComponent},//crear
+  {path:"alumno/form/:id", component: FormularioAlumnoComponent},//editar
 ];
 
 @NgModule({
